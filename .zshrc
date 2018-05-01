@@ -82,4 +82,4 @@ source $ZSH/oh-my-zsh.sh
 #
 #alias vim=/usr/local/Cellar/vim/7.4.488/bin/vim
 
-alias config='/usr/bin/git --git-dir=/Users/pavel/.cfg/ --work-tree=/Users/pavel'
+alias config='/usr/local/bin/git --git-dir=/Users/pavel/.cfg/ --work-tree=/Users/pavel'
