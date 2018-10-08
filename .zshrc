@@ -1,5 +1,7 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
+export GOPATH=$HOME/go
+export PATH="$HOME/.npm-packages/bin:$PATH:$HOME/.dotnet/tools"
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -82,3 +84,10 @@ source $ZSH/oh-my-zsh.sh
 #alias vim=/usr/local/Cellar/vim/7.4.488/bin/vim
 
 alias config='/usr/local/bin/git --git-dir=/Users/pavel/.cfg/ --work-tree=/Users/pavel'
+alias dkp='docker kill $(docker ps -q)'
+alias drmi='docker rmi $(docker images --filter "dangling=true" -q --no-trunc)'
+alias drc='docker rm $(docker ps -qa --no-trunc --filter "status=exited")'
+alias src='cd ~/Source/'
+alias ssrc='cd ~/Source/scala/'
+alias resource='source ~/.zshrc'
+alias paket="mono .paket/paket.exe"
