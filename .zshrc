@@ -1,7 +1,7 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 export GOPATH=$HOME/go
-export PATH="$HOME/.npm-packages/bin:$PATH:$HOME/.dotnet/tools"
+export PATH="$HOME/.npm-packages/bin:$PATH:$HOME/.dotnet/tools:$HOME/bin:$HOME/.local/bin"
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -47,9 +47,10 @@ ZSH_THEME="clean"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git vagrant docker osx brew)
+plugins=(git vagrant docker osx brew sbt scala postgres nvm npm helm kubectl)
 
 source $ZSH/oh-my-zsh.sh
+source $HOME/.bash_profile
 
 # User configuration
 
@@ -83,7 +84,7 @@ source $ZSH/oh-my-zsh.sh
 #
 #alias vim=/usr/local/Cellar/vim/7.4.488/bin/vim
 
-alias config='/usr/local/bin/git --git-dir=/Users/pavel/.cfg/ --work-tree=/Users/pavel'
+alias config='/usr/local/bin/git --git-dir=/Users/$USER/.cfg/ --work-tree=/Users/$USER'
 alias dkp='docker kill $(docker ps -q)'
 alias drmi='docker rmi $(docker images --filter "dangling=true" -q --no-trunc)'
 alias drc='docker rm $(docker ps -qa --no-trunc --filter "status=exited")'
@@ -91,3 +92,8 @@ alias src='cd ~/Source/'
 alias ssrc='cd ~/Source/scala/'
 alias resource='source ~/.zshrc'
 alias paket="mono .paket/paket.exe"
+alias dynamo="java -Djava.library.path=~/bin/dynamo/DynamoDBLocal_lib -jar DynamoDBLocal.jar -sharedDb"
+
+function gcamb() {
+  git commit -a -m "$(current_branch) $@"
+}

@@ -4,40 +4,40 @@ set backspace=indent,eol,start
 
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+"set rtp+=~/.vim/bundle/Vundle.vim
+"call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+" Plugin 'VundleVim/Vundle.vim'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
-Plugin 'tpope/vim-fugitive'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'Lokaltog/powerline'
-Plugin 'scrooloose/syntastic'
+"Plugin 'tpope/vim-fugitive'
+"Plugin 'altercation/vim-colors-solarized'
+"Plugin 'Lokaltog/powerline'
+"Plugin 'scrooloose/syntastic'
 " Plugin 'jceb/vim-orgmode'
 " Plugin 'kongo2002/fsharp-vim'
-Plugin 'ervandew/supertab'
-Plugin 'fsharp/vim-fsharp'
-" Plugin 'fsharp/fsharpbinding',{'rtp':'vim'}
+"Plugin 'ervandew/supertab'
+"Plugin 'fsharp/vim-fsharp'
+"" Plugin 'fsharp/fsharpbinding',{'rtp':'vim'}
 " plugin from http://vim-scripts.org/vim/scripts.html
-Plugin 'L9'
+"Plugin 'L9'
 " Git plugin not hosted on GitHub
-Plugin 'git://git.wincent.com/command-t.git'
-Plugin 'vim-airline/vim-airline'
+"Plugin 'git://git.wincent.com/command-t.git'
+"Plugin 'vim-airline/vim-airline'
 " Plugin 'JamshedVesuna/vim-markdown-preview'
-Plugin 'suan/vim-instant-markdown'
-Plugin 'lambdatoast/elm.vim'
+"Plugin 'suan/vim-instant-markdown'
+"Plugin 'lambdatoast/elm.vim'
 
 " git repos on your local machine (i.e. when working on your own plugin)
 
 
 " All of your Plugins must be added before the following line
-call vundle#end()            " required
+"call vundle#end()            " required
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 filetype plugin on
@@ -56,7 +56,7 @@ filetype plugin on
 inoremap jj <Esc>
 syntax enable
 set background=dark
-colorscheme solarized
+" colorscheme solarized
 
 set guifont=Source\ Code\ Pro\ for\ Powerline:h15
 let g:Powerline_symbols = 'fancy'
