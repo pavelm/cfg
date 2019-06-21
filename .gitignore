@@ -3,7 +3,8 @@
 .ammonite/
 .bash_sessions/
 .cache/
-.config/
+.config/coc/
+.config/.mono/
 .ivy2/
 .node-gyp/
 .npm/
