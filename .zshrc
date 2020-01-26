@@ -1,7 +1,11 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 export GOPATH=$HOME/go
-export PATH="$HOME/.npm-packages/bin:$PATH:$HOME/.dotnet/tools"
+export PATH="$HOME/.npm-packages/bin:$PATH:$HOME/.dotnet/tools:$HOME/bin"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -47,7 +51,7 @@ ZSH_THEME="clean"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git vagrant docker osx brew)
+plugins=(git vagrant docker osx brew postgres)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -88,6 +92,13 @@ alias dkp='docker kill $(docker ps -q)'
 alias drmi='docker rmi $(docker images --filter "dangling=true" -q --no-trunc)'
 alias drc='docker rm $(docker ps -qa --no-trunc --filter "status=exited")'
 alias src='cd ~/Source/'
-alias ssrc='cd ~/Source/scala/'
+alias ssrc='cd ~/Source/scala-computing/'
 alias resource='source ~/.zshrc'
-alias paket="mono .paket/paket.exe"
+alias switchaws=". aws-switch.sh"
+alias editrc='nvim ~/.zshrc'
+alias awswhoami='aws iam get-user'
+
+fpath=($HOME/.zsh-completions/_paket $fpath)
+
+
+eval "$(pyenv init -)"

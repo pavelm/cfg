@@ -2,10 +2,11 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 set backspace=indent,eol,start
 
+inoremap jj <Esc>
+
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
 
@@ -53,7 +54,6 @@ filetype plugin on
 
 
 
-inoremap jj <Esc>
 syntax enable
 set background=dark
 colorscheme solarized
