@@ -3,6 +3,10 @@ export ZSH=$HOME/.oh-my-zsh
 export GOPATH=$HOME/go
 export PATH="$HOME/.npm-packages/bin:$PATH:$HOME/.dotnet/tools:$HOME/bin:$HOME/.local/bin"
 
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
+
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -53,7 +57,6 @@ source $ZSH/oh-my-zsh.sh
 source $HOME/.bash_profile
 . `brew --prefix`/etc/profile.d/z.sh
 
-PROMPT='$(kube_ps1) '$PROMPT
 # User configuration
 
 #export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin/npm"
@@ -91,14 +94,21 @@ alias dkp='docker kill $(docker ps -q)'
 alias drmi='docker rmi $(docker images --filter "dangling=true" -q --no-trunc)'
 alias drc='docker rm $(docker ps -qa --no-trunc --filter "status=exited")'
 alias src='cd ~/Source/'
-alias ssrc='cd ~/Source/scala/'
+alias ssrc='cd ~/Source/scala-computing/'
 alias resource='source ~/.zshrc'
+alias switchaws=". aws-switch.sh"
 alias editrc='nvim ~/.zshrc'
+alias awswhoami='aws iam get-user'
 alias paket="mono .paket/paket.exe"
 alias dynamo="java -Djava.library.path=~/bin/dynamo/DynamoDBLocal_lib -jar DynamoDBLocal.jar -sharedDb"
 alias kprod="kubectl config use-context arn:aws:eks:us-east-1:859599070957:cluster/prod-eks-cluster"
 alias kqa="kubectl config use-context arn:aws:eks:us-east-1:859599070957:cluster/qa-eks-cluster"
 alias kqamvp="kubectl config use-context arn:aws:eks:us-east-1:014990958602:cluster/qa-mvp-eks-cluster"
+
+fpath=($HOME/.zsh-completions/_paket $fpath)
+
+
+eval "$(pyenv init -)"
 
 function gcamb() {
   git commit -a -m "$(current_branch) $@"
