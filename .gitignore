@@ -22,3 +22,5 @@ Source/
 Music/
 Pictures/
 
+.m2/
+.docker/

@@ -47,11 +47,13 @@ ZSH_THEME="clean"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git vagrant docker osx brew sbt scala postgres nvm npm helm kubectl)
+plugins=(git vagrant docker osx brew sbt scala postgres nvm npm helm kubectl tmux kube-ps1)
 
 source $ZSH/oh-my-zsh.sh
 source $HOME/.bash_profile
+. `brew --prefix`/etc/profile.d/z.sh
 
+PROMPT='$(kube_ps1) '$PROMPT
 # User configuration
 
 #export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin/npm"
@@ -91,9 +93,16 @@ alias drc='docker rm $(docker ps -qa --no-trunc --filter "status=exited")'
 alias src='cd ~/Source/'
 alias ssrc='cd ~/Source/scala/'
 alias resource='source ~/.zshrc'
+alias editrc='nvim ~/.zshrc'
 alias paket="mono .paket/paket.exe"
 alias dynamo="java -Djava.library.path=~/bin/dynamo/DynamoDBLocal_lib -jar DynamoDBLocal.jar -sharedDb"
+alias kprod="kubectl config use-context arn:aws:eks:us-east-1:859599070957:cluster/prod-eks-cluster"
+alias kqa="kubectl config use-context arn:aws:eks:us-east-1:859599070957:cluster/qa-eks-cluster"
+alias kqamvp="kubectl config use-context arn:aws:eks:us-east-1:014990958602:cluster/qa-mvp-eks-cluster"
 
 function gcamb() {
   git commit -a -m "$(current_branch) $@"
 }
+
+
+source ~/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
