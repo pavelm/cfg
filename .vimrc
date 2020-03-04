@@ -23,16 +23,16 @@ Plugin 'scrooloose/syntastic'
 " Plugin 'jceb/vim-orgmode'
 " Plugin 'kongo2002/fsharp-vim'
 Plugin 'ervandew/supertab'
-Plugin 'fsharp/vim-fsharp'
+" Plugin 'fsharp/vim-fsharp'
 " Plugin 'fsharp/fsharpbinding',{'rtp':'vim'}
 " plugin from http://vim-scripts.org/vim/scripts.html
-Plugin 'L9'
+" Plugin 'L9'
 " Git plugin not hosted on GitHub
-Plugin 'git://git.wincent.com/command-t.git'
-Plugin 'vim-airline/vim-airline'
+" Plugin 'git://git.wincent.com/command-t.git'
+" Plugin 'vim-airline/vim-airline'
 " Plugin 'JamshedVesuna/vim-markdown-preview'
-Plugin 'suan/vim-instant-markdown'
-Plugin 'lambdatoast/elm.vim'
+" Plugin 'suan/vim-instant-markdown'
+" Plugin 'lambdatoast/elm.vim'
 
 " git repos on your local machine (i.e. when working on your own plugin)
 

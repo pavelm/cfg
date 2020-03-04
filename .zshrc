@@ -53,6 +53,13 @@ ZSH_THEME="clean"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git vagrant docker osx brew postgres)
 
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+
+#  autoload -Uz compinit
+#  compinit
+fi
+
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -102,3 +109,4 @@ fpath=($HOME/.zsh-completions/_paket $fpath)
 
 
 eval "$(pyenv init -)"
+
