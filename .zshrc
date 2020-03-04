@@ -53,6 +53,13 @@ ZSH_THEME="clean"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git vagrant docker osx brew sbt scala postgres nvm npm helm kubectl tmux kube-ps1)
 
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+
+#  autoload -Uz compinit
+#  compinit
+fi
+
 source $ZSH/oh-my-zsh.sh
 source $HOME/.bash_profile
 . `brew --prefix`/etc/profile.d/z.sh
