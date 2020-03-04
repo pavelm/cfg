@@ -1,5 +1,13 @@
 .cfg
 .Trash/
+.android/
+.dotnet/
+.aspnet/
+.DS_Store
+.fastlane/
+.config/yarn/
+.dropbox/
+.local/
 .ammonite/
 .bash_sessions/
 .cache/
